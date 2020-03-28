@@ -1,36 +1,35 @@
 def join_ingredients(src)
-  
-  new_array = []
-  	  i = 0
-  while i < src.length do 
-    new_array.push("I love #{src[i][0]} and #{src[i][1]} on my pizza")
-  	    i += 1
-  end
-  
-  new_array
-    
+faves = []
+
+row_index = 0
+while row_index < src.count do
+  inner = src[row_index]
+faves << "I love #{inner[0]} and #{inner[1]} on my pizza"
+row_index += 1
+end
+faves
 end
 
 def find_greater_pair(src)
-  
-  new_array = []
-  i = 0 
-  
-  while i < src.length do
-    new_array.push(src[i].max)
-    i += 1
+  greater_num = []
+  r_i = 0
+  while r_i < src.length do
+    inner_array = src[r_i]
+  greater_num << inner_array.max
+  r_i += 1
   end
-  new_array
+  greater_num
 end
 
 def total_even_pairs(src)
   total = 0
-  i = 0
-  
-  while i < src.length do
-    if (src[i][0] % 2 == 0) && (src[i][1] % 2 == 0)
-      i += 1
-    end	  
+  r_i = 0
+  while r_i < src.length do
+    inner_array = src[r_i]
+    if inner_array[0] % 2 == 0 && inner_array[1] % 2 == 0
+      total += inner_array[0] + inner_array[1]
+    end
+  r_i += 1
   end
   total
-end
+end	
